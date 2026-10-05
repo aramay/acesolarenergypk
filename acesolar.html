@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="">
+
+<head></head>
+
+<body class="theme-bg-main font-body-md theme-text-body antialiased selection:bg-brand-crimson selection:text-white">
+  <svg aria-hidden="true" class="inline-defs-Container"
+    style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Light/Dark mode dynamic theme variables */
+    :root {
+      --color-page-bg: #070d18;
+      --color-hero-bg: #0a1120;
+      --color-hero-mid: #070d18;
+      --color-hero-end: #0b1325;
+      --color-section-alt: #0b1325;
+      --color-card-bg: #0e172a;
+      --color-card-inner: #111e36;
+      --color-nav-bg: rgba(10, 17, 32, 0.95);
+      --color-topbar-bg: #050b14;
+      --color-footer-bg: #050b14;
+      --color-input-bg: #090f1d;
+      --color-heading: #f8fafc;
+      --color-body-text: #cbd5e1;
+      --color-muted-text: #94a3b8;
+      --color-border: rgba(255, 255, 255, 0.08);
+      --color-border-subtle: rgba(51, 65, 85, 0.6);
+      --color-pill-bg: #111e36;
+      --color-pill-border: rgba(51, 65, 85, 0.8);
+      --color-btn-alt-bg: #162442;
+      --color-btn-alt-hover: #1f325c;
+      --color-shadow: rgba(0, 0, 0, 0.4);
+    }
+
+    html.light {
+      --color-page-bg: #f8fafc;
+      --color-hero-bg: #f1f5f9;
+      --color-hero-mid: #f8fafc;
+      --color-hero-end: #edf2f7;
+      --color-section-alt: #ffffff;
+      --color-card-bg: #ffffff;
+      --color-card-inner: #f1f5f9;
+      --color-nav-bg: rgba(255, 255, 255, 0.97);
+      --color-topbar-bg: #f1f5f9;
+      --color-footer-bg: #0f172a;
+      --color-input-bg: #f8fafc;
+      --color-heading: #0f172a;
+      --color-body-text: #334155;
+      --color-muted-text: #64748b;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-border-subtle: rgba(203, 213, 225, 0.9);
+      --color-pill-bg: #e2e8f0;
+      --color-pill-border: rgba(203, 213, 225, 1);
+      --color-btn-alt-bg: #e2e8f0;
+      --color-btn-alt-hover: #cbd5e1;
+      --color-shadow: rgba(15, 23, 42, 0.08);
+    }
+
+    .theme-bg-main {
+      background-color: var(--color-page-bg);
+    }
+
+    .theme-bg-alt {
+      background-color: var(--color-section-alt);
+    }
+
+    .theme-bg-card {
+      background-color: var(--color-card-bg);
+    }
+
+    .theme-bg-inner {
+      background-color: var(--color-card-inner);
+    }
+
+    .theme-bg-nav {
+      background-color: var(--color-nav-bg);
+    }
+
+    .theme-bg-topbar {
+      background-color: var(--color-topbar-bg);
+    }
+
+    .theme-bg-footer {
+      background-color: var(--color-footer-bg);
+    }
+
+    .theme-bg-input {
+      background-color: var(--color-input-bg);
+    }
+
+    .theme-bg-pill {
+      background-color: var(--color-pill-bg);
+    }
+
+    .theme-border-pill {
+      border-color: var(--color-pill-border);
+    }
+
+    .theme-text-heading {
+      color: var(--color-heading);
+    }
+
+    .theme-text-body {
+      color: var(--color-body-text);
+    }
+
+    .theme-text-muted {
+      color: var(--color-muted-text);
+    }
+
+    .theme-border {
+      border-color: var(--color-border);
+    }
+
+    .theme-border-subtle {
+      border-color: var(--color-border-subtle);
+    }
+
+    .theme-btn-alt {
+      background-color: var(--color-btn-alt-bg);
+    }
+
+    .theme-btn-alt:hover {
+      background-color: var(--color-btn-alt-hover);
+    }
+
+    /* Transition smoothness */
+    body,
+    header,
+    footer,
+    section,
+    div,
+    a,
+    button,
+    input,
+    select {
+      transition-property: background-color, border-color, color, box-shadow;
+      transition-duration: 200ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#070d18", "surface": "#070d18", "surface-dim": "#050b14", "surface-base": "#0b1325", "surface-card": "#0e172a", "surface-container-lowest": "#050b14", "surface-container-low": "#0b1325", "surface-container": "#111e36", "surface-container-high": "#162442", "surface-container-highest": "#1e293b", "slate-surface": "#131f37", "carbon-slate": "#070d18", "text-primary": "#f8fafc", "text-secondary": "#cbd5e1", "text-muted": "#94a3b8", "on-surface": "#f8fafc", "on-background": "#f8fafc", "brand-crimson": "#ef4444", "brand-crimson-hover": "#dc2626", "brand-crimson-subtle": "rgba(239, 68, 68, 0.12)", "primary": "#ef4444", "primary-container": "#dc2626", "on-primary": "#ffffff", "emerald-bright": "#10b981", "energy-emerald": "#10b981", "energy-emerald-dark": "#34d399", "energy-emerald-subtle": "rgba(16, 185, 129, 0.12)", "secondary": "#4edea3", "secondary-container": "rgba(78, 222, 163, 0.15)", "tertiary-fixed": "#7bd0ff", "outline": "rgba(255, 255, 255, 0.12)", "outline-variant": "rgba(255, 255, 255, 0.08)", "surface-border": "rgba(255, 255, 255, 0.08)" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "margin": "1.5rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-badge": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "stat-counter": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "stat-counter": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "display-hero-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script>
+  <header
+    class="fixed top-0 w-full z-50 theme-bg-nav backdrop-blur-md border-b theme-border-subtle shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+    <div class="theme-bg-topbar theme-text-body border-b theme-border-subtle text-label-md">
+      <div class="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between">
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-2"><span
+              class="material-symbols-outlined text-[16px] text-brand-crimson">location_on</span><span
+              class="theme-text-body">Naval Anchorage, Islamabad</span></div>
+          <div class="flex items-center gap-2"><span
+              class="material-symbols-outlined text-[16px] text-emerald-bright">call</span><a
+              class="hover:text-emerald-bright theme-text-heading transition-colors font-medium"
+              href="tel:03340555295">0334-0555295</a></div>
+          <div class="hidden lg:flex items-center gap-2"><span
+              class="material-symbols-outlined text-[16px] theme-text-muted">mail</span><a
+              class="hover:text-emerald-bright theme-text-muted transition-colors"
+              href="mailto:info@acesolarenergypk.com">info@acesolarenergypk.com</a></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div
+            class="hidden sm:flex items-center gap-2 theme-bg-pill border theme-border-pill px-3 py-1 rounded-full text-label-badge theme-text-heading">
+            <span class="material-symbols-outlined text-[14px] text-emerald-bright">verified</span><span class="">AEDB
+              Certified V1</span><span class="opacity-40">•</span><span class="">PEC Registered</span><span
+              class="opacity-40">•</span><span class="">REAP Member</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <div class="flex items-center gap-4 shrink-0">
+        <div class="bg-white/95 p-1.5 rounded-lg shadow-sm flex items-center justify-center border border-slate-200/50">
+          <img alt="Ace Solar Energy Pakistan" class="h-9 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1VOO7F9wOryx0_KRTxDnFYQuQ5SxPfVstKf_kgSa40z9PdFhtkNg8auZZUDSLlFkQoZ7msPV5TjGsydIG6CywF976wNk7xeGOXBM3872nLi3UNnfu6HBXflJLEAzZf7pj0TJ9eJ8UrbrbWdfp0fDaYQYdEuYLzieVR-J_W9TULMZUhCP8zxBHeMIQeV5zyvuXyzs86GjGuerZLIgD58wDqrlBf0zcDpeFPgjbD9HsFxyRTtdXr88C-vo6U" />
+        </div>
+        <div class="flex flex-col"><span
+            class="font-headline-sm text-headline-sm font-bold tracking-tight theme-text-heading">Ace Solar
+            Energy</span><span
+            class="text-label-badge font-label-badge text-emerald-bright font-semibold tracking-wider uppercase">Engineering
+            Pakistan's Solar Future</span></div>
+      </div>
+      <nav class="hidden xl:flex items-center gap-7" data-active-classes="text-brand-crimson font-bold"><a
+          aria-current="page" class="transition-colors text-brand-crimson font-bold" data-path="home" href="#">Home</a>
+        <div class="relative group py-2"><a
+            class="font-label-lg text-label-lg theme-text-body hover:text-brand-crimson transition-colors flex items-center gap-1"
+            data-path="solar-solutions" href="#">Solar Solutions<span
+              class="material-symbols-outlined text-[16px]">expand_more</span></a>
+          <div
+            class="absolute top-full left-0 hidden group-hover:flex flex-col theme-bg-card rounded-xl p-3 shadow-2xl theme-border-subtle border min-w-[220px] z-50 backdrop-blur-xl">
+            <a class="px-3 py-2 rounded-lg text-body-sm theme-text-body hover:bg-emerald-500/10 hover:text-emerald-bright transition-all"
+              data-path="on-grid-solar" href="#">On-Grid Net Metering</a><a
+              class="px-3 py-2 rounded-lg text-body-sm theme-text-body hover:bg-emerald-500/10 hover:text-emerald-bright transition-all"
+              data-path="hybrid-solar" href="#">Hybrid Battery Systems</a><a
+              class="px-3 py-2 rounded-lg text-body-sm theme-text-body hover:bg-emerald-500/10 hover:text-emerald-bright transition-all"
+              data-path="off-grid-solar" href="#">Off-Grid Standalone</a><a
+              class="px-3 py-2 rounded-lg text-body-sm theme-text-body hover:bg-emerald-500/10 hover:text-emerald-bright transition-all"
+              data-path="captive-commercial" href="#">Captive Industrial Plant</a></div>
+        </div><a class="font-label-lg text-label-lg theme-text-body hover:text-brand-crimson transition-colors"
+          data-path="solar-packages" href="#">Solar Packages</a><a
+          class="font-label-lg text-label-lg theme-text-body hover:text-brand-crimson transition-colors"
+          data-path="net-billing" href="#">Net Metering</a><a
+          class="font-label-lg text-label-lg theme-text-body hover:text-brand-crimson transition-colors"
+          data-path="projects" href="#">Projects</a><a
+          class="font-label-lg text-label-lg theme-text-body hover:text-brand-crimson transition-colors"
+          data-path="roi-calculator" href="#">ROI Calculator</a><a
+          class="font-label-lg text-label-lg theme-text-body hover:text-brand-crimson transition-colors"
+          data-path="about-us" href="#">About Us</a>
+      </nav>
+      <div class="flex items-center gap-3 shrink-0"><!-- Interactive Theme Switcher Toggle Button --><button
+          aria-label="Toggle Dark and Light Mode"
+          class="inline-flex items-center gap-2 px-3 py-2 rounded-xl theme-bg-pill border theme-border-pill hover:border-brand-crimson/50 hover:bg-brand-crimson/10 transition-all focus:outline-none focus:ring-2 focus:ring-brand-crimson/40"
+          id="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme (Dark / Light)" type="button"><span
+            class="material-symbols-outlined text-[19px] text-amber-400 select-none"
+            id="theme-icon">light_mode</span><span
+            class="hidden sm:inline font-label-badge text-label-badge uppercase font-bold tracking-wider theme-text-heading select-none"
+            id="theme-text">Light Mode</span></button><a
+          class="hidden sm:inline-flex items-center gap-2 bg-brand-crimson hover:bg-brand-crimson-hover text-white font-label-lg text-label-lg px-5 py-2.5 rounded-lg shadow-[0_0_16px_rgba(239,68,68,0.3)] transition-all"
+          data-path="free-quote" href="#survey-booking"><span
+            class="material-symbols-outlined text-[18px]">solar_power</span><span class="">Get Free Quote</span></a><a
+          class="hidden md:inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-bright border border-emerald-500/30 hover:bg-emerald-500 hover:text-white font-label-lg text-label-lg px-4 py-2.5 rounded-lg transition-all"
+          href="tel:03340555295"><span class="material-symbols-outlined text-[18px]">call</span><span
+            class="">0334-0555295</span></a>
+        <div
+          class="w-8 h-8 rounded-full bg-brand-crimson/20 border border-brand-crimson/40 flex items-center justify-center">
+          <span class="material-symbols-outlined text-brand-crimson text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-[120px] theme-bg-main min-h-[calc(100vh-120px)]">
+    <div class="flex flex-col w-full">
+      <!-- SECTION 1: HERO SECTION -->
+      <section class="relative theme-bg-main theme-text-heading overflow-hidden border-b theme-border-subtle">
+        <!-- Subtle architectural glow elements -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-crimson/15 blur-3xl pointer-events-none">
+        </div>
+        <div
+          class="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-emerald-bright/15 blur-3xl pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 py-16 lg:py-20 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Column: Copy & Primary CTAs -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div
+                class="inline-flex items-center gap-2 self-start theme-bg-pill theme-text-body border theme-border-pill px-3 py-1.5 rounded-full text-label-badge font-label-badge shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-bright animate-pulse"></span>
+                <span class="text-emerald-bright font-semibold uppercase tracking-wider">AEDB Certified EPC
+                  Contractor</span>
+                <span class="opacity-40">•</span>
+                <span class="theme-text-heading font-medium">Twin Cities Fast-Track Approval</span>
+              </div>
+              <h1
+                class="font-display-hero text-display-hero theme-text-heading tracking-tight font-extrabold leading-tight">
+                Reduce Your Electricity Bills &amp; <span class="text-emerald-bright">Stay Powered</span> Day &amp;
+                Night
+              </h1>
+              <p class="font-body-lg text-body-lg theme-text-body max-w-2xl leading-relaxed">
+                Islamabad &amp; Rawalpindi Premier Solar Engineering. Switch to Tier-1 solar with battery backup, slash
+                your Wapda bill to zero, and export power under Pakistan's Net Billing regulations.
+              </p>
+              <!-- Primary Actions -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a class="inline-flex items-center gap-2 bg-brand-crimson hover:bg-brand-crimson-hover text-white font-label-lg text-label-lg px-7 py-4 rounded-xl shadow-[0_0_20px_rgba(239,68,68,0.35)] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                  href="#survey-booking">
+                  <span class="material-symbols-outlined text-[20px]">bolt</span>
+                  <span class="">Get Free Solar Consultation</span>
+                </a>
+                <a class="inline-flex items-center gap-2 theme-btn-alt theme-text-heading border theme-border-subtle font-label-lg text-label-lg px-6 py-4 rounded-xl shadow-sm transition-colors"
+                  href="#roi-calculator">
+                  <span class="material-symbols-outlined text-[20px] text-emerald-bright">calculate</span>
+                  <span class="">Calculate Net Savings</span>
+                </a>
+              </div>
+              <!-- Trust Proof Bar -->
+              <div class="pt-6 mt-4 border-t theme-border-subtle">
+                <p class="font-label-badge text-label-badge uppercase tracking-wider theme-text-muted mb-3">Statutory
+                  Regulatory Compliance &amp; Credentials</p>
+                <div class="flex flex-wrap items-center gap-3">
+                  <div
+                    class="flex items-center gap-2 theme-bg-card border theme-border-subtle px-3.5 py-2 rounded-lg text-body-sm font-label-md theme-text-heading shadow-sm">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">verified</span>
+                    <span class="">AEDB Certified V1</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 theme-bg-card border theme-border-subtle px-3.5 py-2 rounded-lg text-body-sm font-label-md theme-text-heading shadow-sm">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">workspace_premium</span>
+                    <span class="">REAP Corporate Member</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 theme-bg-card border theme-border-subtle px-3.5 py-2 rounded-lg text-body-sm font-label-md theme-text-heading shadow-sm">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">engineering</span>
+                    <span class="">PEC Registered (C-4/C-5)</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 theme-bg-card border theme-border-subtle px-3.5 py-2 rounded-lg text-body-sm font-label-md theme-text-heading shadow-sm">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">swap_vert</span>
+                    <span class="">IESCO / NEPRA Compliant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right Column: Interactive Live Telemetry Villa Card -->
+            <div class="lg:col-span-5 relative">
+              <div
+                class="theme-bg-card backdrop-blur-xl rounded-2xl p-6 shadow-2xl border theme-border-subtle theme-text-heading flex flex-col gap-6">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-emerald-bright animate-ping"></div>
+                    <span
+                      class="font-label-badge text-label-badge uppercase tracking-widest text-emerald-bright font-bold">Active
+                      Real-Time Telemetry</span>
+                  </div>
+                  <span
+                    class="font-label-md text-label-md theme-bg-inner border theme-border-subtle px-2.5 py-1 rounded theme-text-body font-medium">Naval
+                    Anchorage, Islamabad</span>
+                </div>
+                <!-- Photovoltaic Villa Visual Showcase -->
+                <div class="relative w-full h-48 rounded-xl overflow-hidden shadow-inner border theme-border-subtle">
+                  <img class="w-full h-full object-cover"
+                    data-alt="Modern luxury Pakistani villa in Naval Anchorage Islamabad with high-efficiency Tier-1 monocrystalline solar panels mounted neatly on the flat roof under a radiant sunny blue sky with soft lens flare and green landscaped terrace."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9k9EgSrsYcVk8BF4YUb2sEqD2QMNMqS3sLMj3TcgFV2IWShVI3_YwSTnsbHPLzwamxe8mvv5mbo9fzPJBC00kW8p0ptzYKmlMI9aLtuVT9yx49RO75qIDT7p9-yJeDV-l3iHNgImgebCizSs2R0MMWEUlLQ8U28QBz3WXmErI7Vbw_lfnOre0T5mLC2NESnX8ShcrgYPJJq9TaPECh_vl87rdgPOUK2wLYXUBCTEiquwYyc9hjJtK" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#070d18] via-[#070d18]/50 to-transparent"></div>
+                  <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+                    <div>
+                      <p class="font-label-badge text-label-badge text-slate-300">Residential Project</p>
+                      <p class="font-headline-sm text-headline-sm font-bold text-white">15 kW On-Grid System</p>
+                    </div>
+                    <span
+                      class="bg-emerald-500 text-slate-950 font-label-badge text-label-badge font-bold px-2.5 py-1 rounded-md shadow-sm">Zero
+                      WAPDA Bill</span>
+                  </div>
+                </div>
+                <!-- Dynamic Live Generation Graphic & Gauge -->
+                <div class="theme-bg-inner border theme-border-subtle rounded-xl p-4 flex flex-col gap-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-label-md theme-text-muted">Current Solar Yield</span>
+                      <span
+                        class="font-stat-counter text-stat-counter theme-text-heading font-extrabold flex items-baseline gap-1">
+                        8.4 <span class="font-label-lg text-label-lg text-emerald-bright font-semibold">kW</span>
+                      </span>
+                    </div>
+                    <div class="text-right flex flex-col">
+                      <span class="font-label-md text-label-md theme-text-muted">Monthly Bill Reduction</span>
+                      <span class="font-stat-counter text-stat-counter text-emerald-bright font-extrabold">94%</span>
+                    </div>
+                  </div>
+                  <!-- Inline SVG Generation Curve Visualization -->
+                  <div class="w-full theme-bg-card border theme-border-subtle rounded-lg p-3">
+                    <div class="flex justify-between text-[10px] theme-text-muted font-label-badge mb-1">
+                      <span class="">06:00 AM</span>
+                      <span class="text-emerald-bright font-semibold">Peak 1:30 PM (14.2 kW)</span>
+                      <span class="">06:30 PM</span>
+                    </div>
+                    <svg class="w-full h-12 text-emerald-bright overflow-visible" viewbox="0 0 400 60">
+                      <defs>
+                        <lineargradient id="solarYieldGrad" x1="0" x2="0" y1="0" y2="1">
+                          <stop offset="0%" stop-color="#10B981" stop-opacity="0.4"></stop>
+                          <stop offset="100%" stop-color="#10B981" stop-opacity="0.02"></stop>
+                        </lineargradient>
+                      </defs>
+                      <path d="M 0 55 Q 100 50 160 25 T 260 8 T 330 35 T 400 55 L 400 60 L 0 60 Z"
+                        fill="url(#solarYieldGrad)"></path>
+                      <path d="M 0 55 Q 100 50 160 25 T 260 8 T 330 35 T 400 55" fill="none" stroke="currentColor"
+                        stroke-width="2.5"></path>
+                      <circle class="animate-pulse" cx="230" cy="12" fill="#34d399" r="4"></circle>
+                    </svg>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3 pt-1">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-bright text-[20px]">upload</span>
+                      <div class="flex flex-col">
+                        <span class="font-label-badge text-label-badge theme-text-muted">Exported to IESCO</span>
+                        <span class="font-label-md text-label-md font-bold theme-text-heading">5.8 kW Net Green</span>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-brand-crimson text-[20px]">home</span>
+                      <div class="flex flex-col">
+                        <span class="font-label-badge text-label-badge theme-text-muted">Villa Consumption</span>
+                        <span class="font-label-md text-label-md font-bold theme-text-heading">2.6 kW Direct Load</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2: KEY METRICS BAR -->
+      <section class="theme-bg-alt py-10 border-b theme-border-subtle relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="flex items-center gap-4 theme-bg-card border theme-border-subtle p-5 rounded-2xl hover:border-brand-crimson/50 transition-colors shadow-sm">
+              <div
+                class="w-14 h-14 rounded-xl bg-brand-crimson/15 border border-brand-crimson/30 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-brand-crimson text-[30px]">solar_power</span>
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-stat-counter text-stat-counter font-extrabold theme-text-heading leading-none">3,000+</span>
+                <span class="font-body-sm text-body-sm font-semibold theme-text-heading mt-1">Projects Completed</span>
+                <span class="font-label-badge text-label-badge theme-text-muted">Islamabad, Rawalpindi &amp; KPK</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 theme-bg-card border theme-border-subtle p-5 rounded-2xl hover:border-emerald-bright/50 transition-colors shadow-sm">
+              <div
+                class="w-14 h-14 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-emerald-bright text-[30px]">engineering</span>
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-stat-counter text-stat-counter font-extrabold theme-text-heading leading-none">764+</span>
+                <span class="font-body-sm text-body-sm font-semibold theme-text-heading mt-1">Engineers &amp;
+                  Consultants</span>
+                <span class="font-label-badge text-label-badge theme-text-muted">PEC Licensed Professionals</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 theme-bg-card border theme-border-subtle p-5 rounded-2xl hover:border-cyan-500/50 transition-colors shadow-sm">
+              <div
+                class="w-14 h-14 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-cyan-500 text-[30px]">groups</span>
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-stat-counter text-stat-counter font-extrabold theme-text-heading leading-none">2,950+</span>
+                <span class="font-body-sm text-body-sm font-semibold theme-text-heading mt-1">Satisfied Clients</span>
+                <span class="font-label-badge text-label-badge theme-text-muted">Homes, Villas &amp; Commercial</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 theme-bg-card border theme-border-subtle p-5 rounded-2xl hover:border-amber-500/50 transition-colors shadow-sm">
+              <div
+                class="w-14 h-14 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-amber-500 text-[30px]"
+                  style='font-variation-settings: "FILL" 1;'>star</span>
+              </div>
+              <div class="flex flex-col">
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-stat-counter text-stat-counter font-extrabold theme-text-heading leading-none">5.0</span>
+                  <span class="font-headline-sm text-headline-sm text-amber-500 font-bold">★</span>
+                </div>
+                <span class="font-body-sm text-body-sm font-semibold theme-text-heading mt-1">Verified Ratings</span>
+                <span class="font-label-badge text-label-badge theme-text-muted">Google Reviews &amp; Facebook</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 3: SMART SOLAR SOLUTIONS MATRIX -->
+      <section class="py-20 theme-bg-main">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div class="flex flex-col gap-2 max-w-2xl">
+              <span
+                class="font-label-badge text-label-badge text-brand-crimson uppercase tracking-widest font-bold">Engineered
+                For Reliability</span>
+              <h2 class="font-headline-lg text-headline-lg font-bold theme-text-heading">Smart Solar Solutions Across
+                Pakistan</h2>
+              <p class="font-body-md text-body-md theme-text-body">
+                Tailored EPC architectures matched to your roof structure, daytime power draw, and grid stability across
+                Islamabad, Rawalpindi, Punjab, and KPK.
+              </p>
+            </div>
+            <a class="inline-flex items-center gap-2 text-brand-crimson hover:text-red-500 font-label-lg text-label-lg font-semibold hover:gap-3 transition-all"
+              href="#survey-booking">
+              <span class="">Compare All Systems</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Solution 1: On-Grid -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-6 shadow-xl hover:border-emerald-bright/60 transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[28px]">grid_view</span>
+                </div>
+                <div
+                  class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-bright border border-emerald-500/20 font-label-badge text-label-badge uppercase font-bold mb-3">
+                  Fastest ROI (2.2 Yrs)
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading mb-2">On-Grid Solar System
+                </h3>
+                <p class="font-body-sm text-body-sm theme-text-body leading-relaxed mb-6">
+                  Net Billing enabled with bi-directional green meter installation. Powers your appliances directly
+                  during daylight and sells excess electricity units back to IESCO or WAPDA for substantial credit.
+                </p>
+              </div>
+              <div>
+                <div class="theme-bg-inner border theme-border-subtle rounded-xl p-3.5 mb-5 flex flex-col gap-2">
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-emerald-bright">check_circle</span>
+                    <span class="">NEPRA / IESCO Green Meter</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-emerald-bright">check_circle</span>
+                    <span class="">Eliminate slab peak rates</span>
+                  </div>
+                </div>
+                <a class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg theme-btn-alt theme-text-heading font-label-md text-label-md border theme-border-subtle transition-colors"
+                  href="#packages">
+                  <span class="">View On-Grid Packages</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+              </div>
+            </div>
+            <!-- Solution 2: Hybrid -->
+            <div
+              class="theme-bg-card border-2 border-brand-crimson/50 rounded-2xl p-6 shadow-2xl hover:border-brand-crimson transition-all duration-300 flex flex-col justify-between relative group">
+              <div class="absolute top-4 right-4">
+                <span
+                  class="px-2.5 py-0.5 rounded-full bg-brand-crimson text-white font-label-badge text-label-badge font-bold uppercase shadow-sm">Popular</span>
+              </div>
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-brand-crimson/15 border border-brand-crimson/30 text-brand-crimson flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[28px]">battery_charging_full</span>
+                </div>
+                <div
+                  class="inline-block px-2.5 py-1 rounded bg-brand-crimson/10 text-brand-crimson border border-brand-crimson/30 font-label-badge text-label-badge uppercase font-bold mb-3">
+                  Uninterrupted Power
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading mb-2">Hybrid Solar System</h3>
+                <p class="font-body-sm text-body-sm theme-text-body leading-relaxed mb-6">
+                  Complete peace of mind with LiFePO4 Lithium battery bank storage. Automatically shifts load in
+                  milliseconds during unexpected Twin Cities grid load-shedding and line faults.
+                </p>
+              </div>
+              <div>
+                <div class="theme-bg-inner border theme-border-subtle rounded-xl p-3.5 mb-5 flex flex-col gap-2">
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-brand-crimson">check_circle</span>
+                    <span class="">Zero millisecond blackout lag</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-brand-crimson">check_circle</span>
+                    <span class="">Lithium deep-cycle warranty</span>
+                  </div>
+                </div>
+                <a class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-brand-crimson hover:bg-brand-crimson-hover text-white font-label-md text-label-md transition-colors shadow-[0_0_15px_rgba(239,68,68,0.3)]"
+                  href="#packages">
+                  <span class="">View Hybrid Packages</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+              </div>
+            </div>
+            <!-- Solution 3: Off-Grid -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-6 shadow-xl hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-500 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[28px]">cloud_off</span>
+                </div>
+                <div
+                  class="inline-block px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-500 border border-cyan-500/20 font-label-badge text-label-badge uppercase font-bold mb-3">
+                  100% Autonomy
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading mb-2">Off-Grid Solar System
+                </h3>
+                <p class="font-body-sm text-body-sm theme-text-body leading-relaxed mb-6">
+                  Operates totally detached from the utility grid. Heavy-duty solar arrays paired with high-capacity
+                  battery reserves engineered specifically for farmhouses, remote rural estates, and tubewells.
+                </p>
+              </div>
+              <div>
+                <div class="theme-bg-inner border theme-border-subtle rounded-xl p-3.5 mb-5 flex flex-col gap-2">
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-cyan-500">check_circle</span>
+                    <span class="">Complete grid immunity</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-cyan-500">check_circle</span>
+                    <span class="">Dedicated generator integration</span>
+                  </div>
+                </div>
+                <a class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg theme-btn-alt theme-text-heading font-label-md text-label-md border theme-border-subtle transition-colors"
+                  href="#survey-booking">
+                  <span class="">Consult Off-Grid Setup</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+              </div>
+            </div>
+            <!-- Solution 4: Captive -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-6 shadow-xl hover:border-amber-500/60 transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-500 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[28px]">wb_sunny</span>
+                </div>
+                <div
+                  class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-label-badge text-label-badge uppercase font-bold mb-3">
+                  Direct Sun Power
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading mb-2">Captive Solar System
+                </h3>
+                <p class="font-body-sm text-body-sm theme-text-body leading-relaxed mb-6">
+                  Low-cost daytime power direct to specific high-amperage equipment like AC units, motors, schools, or
+                  cold rooms without requiring expensive batteries or regulatory net-billing waiting periods.
+                </p>
+              </div>
+              <div>
+                <div class="theme-bg-inner border theme-border-subtle rounded-xl p-3.5 mb-5 flex flex-col gap-2">
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-amber-500">check_circle</span>
+                    <span class="">Lowest upfront hardware cost</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-body-sm theme-text-heading">
+                    <span class="material-symbols-outlined text-[16px] text-amber-500">check_circle</span>
+                    <span class="">Plug &amp; play single load run</span>
+                  </div>
+                </div>
+                <a class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg theme-btn-alt theme-text-heading font-label-md text-label-md border theme-border-subtle transition-colors"
+                  href="#packages">
+                  <span class="">View Captive Deals</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 4: INTERACTIVE SAVINGS & ROI CALCULATOR -->
+      <section class="py-20 theme-bg-alt border-y theme-border-subtle relative" id="roi-calculator">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span
+              class="font-label-badge text-label-badge text-emerald-bright uppercase tracking-widest font-bold">Financial
+              Feasibility Tool</span>
+            <h2 class="font-headline-lg text-headline-lg font-bold theme-text-heading mt-1">Live Electricity Savings
+              &amp; Net Metering ROI</h2>
+            <p class="font-body-md text-body-md theme-text-body mt-2">
+              Move the slider to match your average monthly WAPDA / IESCO bill in Pakistani Rupees and immediately
+              preview your estimated system sizing, payback horizon, and unit production.
+            </p>
+          </div>
+          <div
+            class="theme-bg-card border theme-border-subtle rounded-3xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Slider Panel -->
+            <div class="lg:col-span-6 flex flex-col gap-8">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <label class="font-headline-sm text-headline-sm font-semibold theme-text-heading"
+                    for="billSlider">Current Monthly Electricity Bill</label>
+                  <span class="font-stat-counter text-stat-counter font-extrabold text-brand-crimson"
+                    id="billValueDisplay">PKR 45,000</span>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-muted mb-6">Based on current NEPRA consumer tariff rates
+                  including fuel price adjustments and taxes.</p>
+                <!-- Styled Range Slider -->
+                <input
+                  class="w-full h-3 theme-bg-inner rounded-lg appearance-none cursor-pointer accent-brand-crimson border theme-border-subtle"
+                  id="billSlider" max="250000" min="20000" step="5000" type="range" value="45000" />
+                <div class="flex justify-between text-body-sm theme-text-muted font-label-md mt-3">
+                  <span class="">Rs 20,000</span>
+                  <span class="">Rs 100,000</span>
+                  <span class="">Rs 250,000+</span>
+                </div>
+              </div>
+              <!-- Quick presets -->
+              <div class="flex flex-col gap-2">
+                <span class="font-label-badge text-label-badge uppercase tracking-wider theme-text-muted">Quick Villa
+                  Sizing Presets:</span>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="px-3.5 py-1.5 rounded-lg theme-btn-alt theme-text-heading border theme-border-subtle font-label-md text-label-md transition-colors"
+                    onclick="setBill(25000)" type="button">5 Marla (Rs 25k)</button>
+                  <button
+                    class="px-3.5 py-1.5 rounded-lg theme-btn-alt theme-text-heading border theme-border-subtle font-label-md text-label-md transition-colors"
+                    onclick="setBill(45000)" type="button">10 Marla (Rs 45k)</button>
+                  <button
+                    class="px-3.5 py-1.5 rounded-lg theme-btn-alt theme-text-heading border theme-border-subtle font-label-md text-label-md transition-colors"
+                    onclick="setBill(80000)" type="button">1 Kanal (Rs 80k)</button>
+                  <button
+                    class="px-3.5 py-1.5 rounded-lg theme-btn-alt theme-text-heading border theme-border-subtle font-label-md text-label-md transition-colors"
+                    onclick="setBill(160000)" type="button">Commercial / Plaza (Rs 160k)</button>
+                </div>
+              </div>
+              <div class="theme-bg-inner border theme-border-subtle rounded-xl p-4 flex items-start gap-3">
+                <span class="material-symbols-outlined text-emerald-bright text-[22px] mt-0.5">verified_user</span>
+                <p class="font-body-sm text-body-sm theme-text-body">
+                  Ace Solar handles complete NEPRA/IESCO green-meter documentation, load sanctioning, NOC from
+                  distribution companies, and on-site testing.
+                </p>
+              </div>
+            </div>
+            <!-- Right Dynamic Metric Projection Cards -->
+            <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                class="theme-bg-inner border theme-border-subtle rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div
+                    class="w-10 h-10 rounded-lg bg-brand-crimson/15 border border-brand-crimson/30 flex items-center justify-center mb-3">
+                    <span class="material-symbols-outlined text-brand-crimson text-[22px]">solar_power</span>
+                  </div>
+                  <span class="font-label-badge text-label-badge uppercase tracking-wider theme-text-muted">Optimal
+                    Plant Size</span>
+                  <p class="font-stat-counter text-stat-counter font-extrabold theme-text-heading mt-1"
+                    id="systemSizeDisplay">7.5 kW</p>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-muted mt-3">Provides sufficient surplus for green meter
+                  export</p>
+              </div>
+              <div
+                class="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center mb-3">
+                    <span class="material-symbols-outlined text-emerald-bright text-[22px]">savings</span>
+                  </div>
+                  <span
+                    class="font-label-badge text-label-badge uppercase tracking-wider text-emerald-bright font-bold">Estimated
+                    Annual Savings</span>
+                  <p class="font-stat-counter text-stat-counter font-extrabold text-emerald-bright mt-1"
+                    id="annualSavingsDisplay">PKR 540,000</p>
+                </div>
+                <p class="font-body-sm text-body-sm text-emerald-600 dark:text-emerald-300 mt-3 font-medium">Indexed
+                  against 2025 NEPRA tariffs</p>
+              </div>
+              <div
+                class="theme-bg-inner border theme-border-subtle rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div
+                    class="w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center mb-3">
+                    <span class="material-symbols-outlined text-cyan-500 text-[22px]">hourglass_bottom</span>
+                  </div>
+                  <span class="font-label-badge text-label-badge uppercase tracking-wider theme-text-muted">Expected
+                    Payback</span>
+                  <p class="font-stat-counter text-stat-counter font-extrabold theme-text-heading mt-1"
+                    id="paybackDisplay">2.4 Years</p>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-muted mt-3">Free electricity for remaining 22+ years</p>
+              </div>
+              <div
+                class="theme-bg-inner border theme-border-subtle rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div
+                    class="w-10 h-10 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mb-3">
+                    <span class="material-symbols-outlined text-emerald-bright text-[22px]">eco</span>
+                  </div>
+                  <span class="font-label-badge text-label-badge uppercase tracking-wider theme-text-muted">Carbon
+                    Offset</span>
+                  <p class="font-stat-counter text-stat-counter font-extrabold theme-text-heading mt-1"
+                    id="carbonOffsetDisplay">8.2 Tons/Yr</p>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-muted mt-3">Equivalent to planting 135 trees annually</p>
+              </div>
+              <div class="sm:col-span-2 pt-2">
+                <a class="w-full inline-flex items-center justify-center gap-3 bg-brand-crimson hover:bg-brand-crimson-hover text-white font-label-lg text-label-lg py-4 rounded-xl shadow-[0_0_20px_rgba(239,68,68,0.3)] transition-all"
+                  href="#survey-booking">
+                  <span class="">Lock In System Sizing &amp; Get Official Bill Quotation</span>
+                  <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 5: TURNKEY TRANSPARENT SOLAR PACKAGES -->
+      <section class="py-20 theme-bg-main" id="packages">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="font-label-badge text-label-badge text-brand-crimson uppercase tracking-widest font-bold">100%
+              Turnkey Transparent Estimates</span>
+            <h2 class="font-headline-lg text-headline-lg font-bold theme-text-heading mt-1">Authentic Solar Packages
+              &amp; Pricing in Pakistan</h2>
+            <p class="font-body-md text-body-md theme-text-body mt-2">
+              Complete turnkey EPC engineering including certified tier-1 modules, pure sine wave inverters, galvanized
+              mounting structures, and official distribution company paperwork.
+            </p>
+          </div>
+          <!-- 3-Column Pricing Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-16">
+            <!-- Package 1: 5kW On-Grid -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-3xl p-8 shadow-xl flex flex-col justify-between relative group hover:border-emerald-bright/50 transition-all">
+              <div
+                class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 px-4 py-1 rounded-full font-label-badge text-label-badge uppercase tracking-wider font-bold shadow-md">
+                Best Seller (Zero-Bill)
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-4 mt-2">
+                  <span class="font-label-badge text-label-badge theme-text-muted uppercase">On-Grid Net Metering</span>
+                  <span class="material-symbols-outlined text-emerald-bright text-[24px]">solar_power</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading">5kW On-Grid System</h3>
+                <p class="font-body-sm text-body-sm theme-text-body mt-1">Optimized for 10 Marla to 1 Kanal residences
+                </p>
+                <div class="my-6 py-4 border-y theme-border-subtle">
+                  <span class="font-label-badge text-label-badge theme-text-muted uppercase">Complete Turnkey
+                    Package</span>
+                  <div class="flex items-baseline gap-1 mt-1">
+                    <span class="font-headline-sm text-headline-sm font-bold theme-text-heading">Rs</span>
+                    <span class="font-stat-counter text-stat-counter font-extrabold theme-text-heading">730,400</span>
+                  </div>
+                  <span class="font-label-badge text-label-badge text-emerald-bright font-semibold">Includes Net
+                    Metering Registration</span>
+                </div>
+                <!-- Specs List -->
+                <ul class="flex flex-col gap-3 font-body-sm text-body-sm theme-text-body mb-8">
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">check_circle</span>
+                    <span class="">8× 605W–615W Tier-1 Grade-A Modules</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">check_circle</span>
+                    <span class="">1× 10kW Livoltek / Aotai High-Yield Inverter</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">check_circle</span>
+                    <span class="">Galvanized Iron (GI) Heavy Wind Structure</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">check_circle</span>
+                    <span class="">DC &amp; AC pure copper cables + Schneider breakers</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">check_circle</span>
+                    <span class="">Complete IESCO/WAPDA Green Meter Net Billing File</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">check_circle</span>
+                    <span class="">Dedicated After-Sales &amp; Cloud Monitoring</span>
+                  </li>
+                </ul>
+              </div>
+              <a class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-label-lg text-label-lg font-bold transition-colors shadow-lg"
+                href="#survey-booking">
+                <span class="">Order System Consultation</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+            <!-- Package 2: 3.5kW Hybrid -->
+            <div
+              class="theme-bg-inner border-2 border-brand-crimson rounded-3xl p-8 shadow-2xl flex flex-col justify-between relative group scale-105 z-10">
+              <div
+                class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-crimson text-white px-4 py-1 rounded-full font-label-badge text-label-badge uppercase tracking-wider font-bold shadow-[0_0_15px_rgba(239,68,68,0.5)]">
+                Uninterrupted UPS + Solar
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-4 mt-2">
+                  <span class="font-label-badge text-label-badge text-brand-crimson uppercase font-bold">Hybrid Battery
+                    Backup</span>
+                  <span class="material-symbols-outlined text-brand-crimson text-[24px]">power</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading">3.5kW Hybrid System</h3>
+                <p class="font-body-sm text-body-sm theme-text-body mt-1">Zero downtime for critical fans, fridges &amp;
+                  lighting</p>
+                <div class="my-6 py-4 border-y theme-border-subtle">
+                  <span class="font-label-badge text-label-badge theme-text-muted uppercase">All Inclusive
+                    Equipment</span>
+                  <div class="flex items-baseline gap-1 mt-1">
+                    <span class="font-headline-sm text-headline-sm font-bold text-brand-crimson">Rs</span>
+                    <span class="font-stat-counter text-stat-counter font-extrabold text-brand-crimson">661,205</span>
+                  </div>
+                  <span class="font-label-badge text-label-badge text-brand-crimson font-semibold">22,000 Units Saved
+                    Per Year</span>
+                </div>
+                <!-- Specs List -->
+                <ul class="flex flex-col gap-3 font-body-sm text-body-sm theme-text-body mb-8">
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-brand-crimson">check_circle</span>
+                    <span class="">1× 4.5kW Ziewnic / Equivalent Hybrid Inverter</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-brand-crimson">check_circle</span>
+                    <span class="">2× 230Ah (12V) High-Density Lithium-Ion Batteries</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-brand-crimson">check_circle</span>
+                    <span class="">Pre-Engineered L-2 Elevated Roof Framing</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-brand-crimson">check_circle</span>
+                    <span class="">DC &amp; AC Distribution Box with Surge Protectors</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-brand-crimson">check_circle</span>
+                    <span class="">Electrical Load Balancing &amp; Phase Distribution</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-brand-crimson">check_circle</span>
+                    <span class="">Mobile App Telemetry &amp; Battery State Health</span>
+                  </li>
+                </ul>
+              </div>
+              <a class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brand-crimson hover:bg-brand-crimson-hover text-white font-label-lg text-label-lg font-bold transition-colors shadow-[0_0_20px_rgba(239,68,68,0.4)]"
+                href="#survey-booking">
+                <span class="">Secure Hybrid Package</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+            <!-- Package 3: 5kW Captive -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-3xl p-8 shadow-xl flex flex-col justify-between relative group hover:border-amber-500/50 transition-all">
+              <div
+                class="absolute -top-3.5 left-1/2 -translate-x-1/2 theme-btn-alt border theme-border-subtle theme-text-heading px-4 py-1 rounded-full font-label-badge text-label-badge uppercase tracking-wider font-bold shadow-md">
+                Commercial &amp; Low-Cost
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-4 mt-2">
+                  <span class="font-label-badge text-label-badge theme-text-muted uppercase">Captive Direct
+                    Generation</span>
+                  <span class="material-symbols-outlined text-amber-500 text-[24px]">wb_sunny</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading">5kW Captive System</h3>
+                <p class="font-body-sm text-body-sm theme-text-body mt-1">Direct daytime power for ACs, motors &amp;
+                  commercial loads</p>
+                <div class="my-6 py-4 border-y theme-border-subtle">
+                  <span class="font-label-badge text-label-badge theme-text-muted uppercase">No Batteries
+                    Required</span>
+                  <div class="flex items-baseline gap-1 mt-1">
+                    <span class="font-headline-sm text-headline-sm font-bold theme-text-heading">Rs</span>
+                    <span class="font-stat-counter text-stat-counter font-extrabold theme-text-heading">450,000</span>
+                  </div>
+                  <span class="font-label-badge text-label-badge theme-text-muted font-semibold">Immediate Day Power
+                    Run</span>
+                </div>
+                <!-- Specs List -->
+                <ul class="flex flex-col gap-3 font-body-sm text-body-sm theme-text-body mb-8">
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">check_circle</span>
+                    <span class="">5× 605W Tier-1 High-Efficiency Solar Panels</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">check_circle</span>
+                    <span class="">1× 5kW Ziewnic / Equivalent Inverter</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">check_circle</span>
+                    <span class="">Certified L-2 Mounting Frames</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">check_circle</span>
+                    <span class="">AC/DC cabling, Breakers &amp; safety disconnects</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">check_circle</span>
+                    <span class="">Full on-site commissioning &amp; testing</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">check_circle</span>
+                    <span class="">Net Billing documentation file included</span>
+                  </li>
+                </ul>
+              </div>
+              <a class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl theme-btn-alt theme-text-heading border theme-border-subtle font-label-lg text-label-lg transition-colors shadow-sm"
+                href="#survey-booking">
+                <span class="">Get Captive Quote</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          <!-- Turnkey Lithium Storage Add-on Table -->
+          <div class="theme-bg-card border theme-border-subtle rounded-2xl p-6 lg:p-8 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <span class="font-label-badge text-label-badge text-emerald-bright font-bold uppercase">Turnkey Lithium
+                  Storage Suites</span>
+                <h3 class="font-headline-md text-headline-md font-bold theme-text-heading">Pre-Packaged Hybrid + Lithium
+                  Storage Systems</h3>
+              </div>
+              <span class="font-body-sm text-body-sm theme-text-muted">Includes 24/7 dedicated engineering
+                support</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr
+                    class="theme-bg-inner theme-text-heading font-label-md text-label-md uppercase tracking-wider border-b theme-border-subtle">
+                    <th class="py-3.5 px-4 rounded-l-lg">Package Specification</th>
+                    <th class="py-3.5 px-4">Solar Array</th>
+                    <th class="py-3.5 px-4">Hybrid Inverter</th>
+                    <th class="py-3.5 px-4">Lithium Battery Bank</th>
+                    <th class="py-3.5 px-4">Support &amp; Warranty</th>
+                    <th class="py-3.5 px-4 text-right rounded-r-lg">Turnkey Price (PKR)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y theme-border-subtle font-body-sm text-body-sm theme-text-body">
+                  <tr class="hover:bg-emerald-500/5 transition-colors">
+                    <td class="py-4 px-4 font-semibold theme-text-heading">Residential Package 1</td>
+                    <td class="py-4 px-4 theme-text-body">5 kW Tier-1 Panels</td>
+                    <td class="py-4 px-4 theme-text-body">6 kW Hybrid Inverter</td>
+                    <td class="py-4 px-4"><span
+                        class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright px-2.5 py-1 rounded font-semibold">5
+                        kWh Lithium (LiFePO4)</span></td>
+                    <td class="py-4 px-4 theme-text-muted">24/7 Monitoring &amp; Support</td>
+                    <td class="py-4 px-4 text-right font-headline-sm text-headline-sm font-bold text-brand-crimson">Rs
+                      895,000</td>
+                  </tr>
+                  <tr class="hover:bg-emerald-500/5 transition-colors">
+                    <td class="py-4 px-4 font-semibold theme-text-heading">Residential Package 2</td>
+                    <td class="py-4 px-4 theme-text-body">6 kW Tier-1 Panels</td>
+                    <td class="py-4 px-4 theme-text-body">6 kW Hybrid Inverter</td>
+                    <td class="py-4 px-4"><span
+                        class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright px-2.5 py-1 rounded font-semibold">5
+                        kWh Lithium (LiFePO4)</span></td>
+                    <td class="py-4 px-4 theme-text-muted">24/7 Monitoring &amp; Support</td>
+                    <td class="py-4 px-4 text-right font-headline-sm text-headline-sm font-bold text-brand-crimson">Rs
+                      975,000</td>
+                  </tr>
+                  <tr class="hover:bg-emerald-500/5 transition-colors">
+                    <td class="py-4 px-4 font-semibold theme-text-heading">Heavy Villa Package 3</td>
+                    <td class="py-4 px-4 theme-text-body">6 kW Tier-1 Panels</td>
+                    <td class="py-4 px-4 theme-text-body">6 kW Hybrid Inverter</td>
+                    <td class="py-4 px-4"><span
+                        class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright px-2.5 py-1 rounded font-semibold">10
+                        kWh Dual Lithium</span></td>
+                    <td class="py-4 px-4 theme-text-muted">24/7 Monitoring &amp; Support</td>
+                    <td class="py-4 px-4 text-right font-headline-sm text-headline-sm font-bold text-brand-crimson">Rs
+                      1,245,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 6: WHY CHOOSE ACE SOLAR (ENGINEERING & AUTHORITY) -->
+      <section class="py-20 theme-bg-alt theme-text-heading border-t theme-border-subtle relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <span
+                class="font-label-badge text-label-badge text-emerald-bright uppercase tracking-widest font-bold">Engineering
+                Excellence</span>
+              <h2 class="font-headline-lg text-headline-lg font-bold theme-text-heading mt-1">Why Ace Solar Is
+                Islamabad's Trusted EPC</h2>
+              <p class="font-body-md text-body-md theme-text-body max-w-2xl mt-2">
+                We deliver bankable engineering, statutory approvals, and precision installation adhering strictly to
+                Pakistan Engineering Council standards.
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-2 theme-bg-card border theme-border-subtle px-4 py-2 rounded-xl shadow-sm">
+              <span class="material-symbols-outlined text-emerald-bright text-[20px]">thumb_up</span>
+              <span class="font-label-md text-label-md theme-text-heading">Over 90% Documented Bill Elimination</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Benefit 1 -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-7 flex flex-col gap-4 hover:border-emerald-bright/50 transition-colors shadow-sm">
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright flex items-center justify-center">
+                <span class="material-symbols-outlined text-[28px]">electric_meter</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm font-bold theme-text-heading">Net Metering Pioneers</h3>
+              <p class="font-body-sm text-body-sm theme-text-body leading-relaxed">
+                Our specialized liaison team fast-tracks IESCO, LESCO, and GEPCO bi-directional green meter
+                installations from load approval up to meter testing.
+              </p>
+            </div>
+            <!-- Benefit 2 -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-7 flex flex-col gap-4 hover:border-brand-crimson/50 transition-colors shadow-sm">
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-crimson/15 border border-brand-crimson/30 text-brand-crimson flex items-center justify-center">
+                <span class="material-symbols-outlined text-[28px]">verified</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm font-bold theme-text-heading">AEDB &amp; PEC Certified</h3>
+              <p class="font-body-sm text-body-sm theme-text-body leading-relaxed">
+                Certified by Alternative Energy Development Board (AEDB) and registered with Pakistan Engineering
+                Council, ensuring complete statutory compliance.
+              </p>
+            </div>
+            <!-- Benefit 3 -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-7 flex flex-col gap-4 hover:border-emerald-bright/50 transition-colors shadow-sm">
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright flex items-center justify-center">
+                <span class="material-symbols-outlined text-[28px]">support_agent</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm font-bold theme-text-heading">24/7 Rapid After-Sales</h3>
+              <p class="font-body-sm text-body-sm theme-text-body leading-relaxed">
+                Field technical response teams ready throughout Islamabad and Rawalpindi. On-site emergency visits even
+                after working hours and public holidays.
+              </p>
+            </div>
+            <!-- Benefit 4 -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-7 flex flex-col gap-4 hover:border-cyan-500/50 transition-colors shadow-sm">
+              <div
+                class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-500 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[28px]">cloud_sync</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm font-bold theme-text-heading">Remote Cloud Monitoring</h3>
+              <p class="font-body-sm text-body-sm theme-text-body leading-relaxed">
+                Every plant features live Wi-Fi telemetry. Our technical operations desk continuously monitors inverter
+                parameters, thermal output, and string yields.
+              </p>
+            </div>
+            <!-- Benefit 5 -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-7 flex flex-col gap-4 hover:border-brand-crimson/50 transition-colors shadow-sm">
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-crimson/15 border border-brand-crimson/30 text-brand-crimson flex items-center justify-center">
+                <span class="material-symbols-outlined text-[28px]">hardware</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm font-bold theme-text-heading">Tier-1 Hardware Exclusively
+              </h3>
+              <p class="font-body-sm text-body-sm theme-text-body leading-relaxed">
+                We strictly deploy authentic Tier-1 panels (Longi, JA Solar, Jinko) and industry-proven inverters
+                (Growatt, Livoltek, Knox, Ziewnic) with manufacturer warranties.
+              </p>
+            </div>
+            <!-- Benefit 6 -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-7 flex flex-col gap-4 hover:border-emerald-bright/50 transition-colors shadow-sm">
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright flex items-center justify-center">
+                <span class="material-symbols-outlined text-[28px]">precision_manufacturing</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm font-bold theme-text-heading">Complete Turnkey Execution</h3>
+              <p class="font-body-sm text-body-sm theme-text-body leading-relaxed">
+                Zero subcontracting. Our in-house structural engineers, solar electricians, and safety officers
+                supervise every millimeter of cabling and framing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 7: VERIFIED DEPLOYMENTS & CLIENT REVIEWS -->
+      <section class="py-20 theme-bg-main border-t theme-border-subtle">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div>
+              <span
+                class="font-label-badge text-label-badge text-brand-crimson uppercase tracking-widest font-bold">Documented
+                Proof</span>
+              <h2 class="font-headline-lg text-headline-lg font-bold theme-text-heading mt-1">Verified Installations
+                &amp; Client Testimonials</h2>
+              <p class="font-body-md text-body-md theme-text-body mt-2">
+                Real feedback from property owners enjoying zero-bill months across Islamabad and Rawalpindi.
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-2 theme-bg-card border theme-border-subtle px-4 py-2 rounded-xl shadow-sm">
+              <span class="font-label-md text-label-md theme-text-muted">Overall Satisfaction:</span>
+              <div class="flex items-center text-amber-400">
+                <span class="material-symbols-outlined text-[20px]"
+                  style='font-variation-settings: "FILL" 1;'>star</span>
+                <span class="material-symbols-outlined text-[20px]"
+                  style='font-variation-settings: "FILL" 1;'>star</span>
+                <span class="material-symbols-outlined text-[20px]"
+                  style='font-variation-settings: "FILL" 1;'>star</span>
+                <span class="material-symbols-outlined text-[20px]"
+                  style='font-variation-settings: "FILL" 1;'>star</span>
+                <span class="material-symbols-outlined text-[20px]"
+                  style='font-variation-settings: "FILL" 1;'>star</span>
+              </div>
+              <span class="font-label-md text-label-md font-bold theme-text-heading">5.0 (Google)</span>
+            </div>
+          </div>
+          <!-- Testimonial Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+            <!-- Review 1: Atif Rasheed -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-1 text-amber-400">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-box-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-body italic leading-relaxed">
+                  "Ace Solar team highly obliged for prompt and professional response to address the issue occurred in
+                  the system due to fluctuations of grid supply. That too after iftar when the team was off from duty.
+                  Well done, at least we can sleep with peace! Highly Recommended."
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t theme-border-subtle flex items-center justify-between">
+                <div class="flex flex-col">
+                  <span class="font-headline-sm text-headline-sm font-bold theme-text-heading">Atif Rasheed</span>
+                  <span class="font-label-badge text-label-badge theme-text-muted">Naval Anchorage, Islamabad</span>
+                </div>
+                <span
+                  class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright px-2.5 py-1 rounded text-label-badge font-label-badge font-semibold">Verified
+                  Client</span>
+              </div>
+            </div>
+            <!-- Review 2: M Faisal Sherazi -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-1 text-amber-400">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-body italic leading-relaxed">
+                  "I take the opportunity to convey my appreciation for the staff of Ace Solar Energy (SMC Pvt) Ltd for
+                  installation of 7.2 KW system at my residence. Engr Sheraz puts his best efforts and support for
+                  completion of tasks. The performance during installation is highly commendable."
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t theme-border-subtle flex items-center justify-between">
+                <div class="flex flex-col">
+                  <span class="font-headline-sm text-headline-sm font-bold theme-text-heading">M Faisal Sherazi</span>
+                  <span class="font-label-badge text-label-badge theme-text-muted">7.2 kW System Owner</span>
+                </div>
+                <span
+                  class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright px-2.5 py-1 rounded text-label-badge font-label-badge font-semibold">Verified
+                  Client</span>
+              </div>
+            </div>
+            <!-- Review 3: Abdul Rafay -->
+            <div
+              class="theme-bg-card border theme-border-subtle rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-1 text-amber-400">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    style='font-variation-settings: "FILL" 1;'>star</span>
+                </div>
+                <p class="font-body-sm text-body-sm theme-text-body italic leading-relaxed">
+                  "Dear Sheraz, I really appreciate you and Zain for carrying out the project in a timely manner.
+                  Extremely pleased with Dastageer, Zafar and Mohyuddin's hard work. Everything looks great, the team's
+                  service was very professional. I would definitely recommend. JazakAllah!"
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t theme-border-subtle flex items-center justify-between">
+                <div class="flex flex-col">
+                  <span class="font-headline-sm text-headline-sm font-bold theme-text-heading">Abdul Rafay</span>
+                  <span class="font-label-badge text-label-badge theme-text-muted">Twin Cities Residence</span>
+                </div>
+                <span
+                  class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright px-2.5 py-1 rounded text-label-badge font-label-badge font-semibold">Verified
+                  Client</span>
+              </div>
+            </div>
+          </div>
+          <!-- Project Gallery Deployments -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-xl h-64 theme-bg-card border theme-border-subtle">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="High angle shot of a large 25kW solar panel array installed on an expansive villa rooftop in Naval Anchorage Islamabad on an elevated galvanized steel frame with clear sky."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2aPC2LOrtAnBlAgAHbwdxDVgh7NIVjXHKxAGcK8YCYRX7wYOZPwWSxMWqxdhWJaVlgpYFJa1t8EUkO4NZ0TziPLQqevn-0NanFo68E0d5P6Qlq6fgUwxNqiKtfnK7-2vDPmSEfQMpWH5m2avDJttcDjfS5q2bXyUgqZalnDFQPvbqvCvZzcjj8Eh2vEcxkwwy1l1zEhXcRl45zWUbd5wlWjo9JOt7K7NYnKcYHZNPWL1c_pzpW4B" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070d18] via-[#070d18]/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span
+                  class="px-2 py-0.5 rounded bg-brand-crimson text-white font-label-badge text-label-badge font-bold uppercase shadow-sm">25
+                  kW Turnkey</span>
+                <h4 class="font-headline-sm text-headline-sm font-bold text-white mt-1">Naval Anchorage Luxury Estate
+                </h4>
+                <p class="font-body-sm text-body-sm text-slate-300">Bi-directional IESCO Net Metering</p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-xl h-64 theme-bg-card border theme-border-subtle">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Clean rooftop solar installation of 12kW hybrid solar power setup in Bahria Town Rawalpindi with high quality black framing and Lithium battery storage enclosure."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx7Rx_YDmJEGGbHrnDrWQTnozQz54So69jHunoag4QMEGJ1zOOivoiHo_s5rTp5JYnK9pFztOrqYY6XIDBK2qOzxnoUYJMWZHRlXwwMKLaTgldhkdlLI0nyeThPrZLjYEqcPk9G6gDQmFxVH3hKfYlzYdbStWH6QjE0Cow_rJg4isP-O8PNSnJJ1Wf-oqc9FOgO1_tIV4uw41uAA6jZWbs65n2gCoNJ9ncob9mxE2l-wyhCv0Ckc2D" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070d18] via-[#070d18]/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span
+                  class="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-label-badge text-label-badge font-bold uppercase shadow-sm">12
+                  kW Hybrid</span>
+                <h4 class="font-headline-sm text-headline-sm font-bold text-white mt-1">Bahria Town Phase 7 Villa</h4>
+                <p class="font-body-sm text-body-sm text-slate-300">Continuous 10kWh LiFePO4 ESS</p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-xl h-64 theme-bg-card border theme-border-subtle">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Neat residential solar power plant in DHA Phase 2 Islamabad with 10kW tier-1 mono PERC panels facing optimal south azimuth angle."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaUWi1ZuA90UjXOBlobFmP9K_ImgdSvExo1qN_L9QFts5owFUlzBw1sloywgKU3C9nXjootoCOg3sr9-FrLC9c9jr3DbD-u7k0mBo6ZWgOt6PUzrTICgR4ccCPsh2CzFqv-Gbet0HpSRbyaTErkn0K2WPtmHSiYO05wtlx83G0G4WcaXIvI03J5lS3t2Zwrs_g0sgq5IVT3s6hcjqJT1fk6MiTv3YUHLx4L9nlouM_VMG4Jaed_3yj" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070d18] via-[#070d18]/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span
+                  class="px-2 py-0.5 rounded theme-btn-alt border theme-border-subtle text-white font-label-badge text-label-badge font-bold uppercase shadow-sm">10
+                  kW On-Grid</span>
+                <h4 class="font-headline-sm text-headline-sm font-bold text-white mt-1">DHA Phase 2 Residence</h4>
+                <p class="font-body-sm text-body-sm text-slate-300">Achieved 96% Bill Reduction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 8: FREE SITE SURVEY BOOKING & HEAD OFFICE INFO -->
+      <section class="py-20 theme-bg-alt border-t theme-border-subtle relative" id="survey-booking">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Lead Generation Form -->
+            <div class="lg:col-span-7 theme-bg-card border theme-border-subtle rounded-3xl p-8 lg:p-10 shadow-2xl">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="material-symbols-outlined text-brand-crimson text-[28px]">solar_power</span>
+                <span
+                  class="font-label-badge text-label-badge text-brand-crimson uppercase tracking-widest font-bold">Free
+                  On-Site Technical Evaluation</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg font-bold theme-text-heading">Book Your Free Solar Site
+                Survey</h2>
+              <p class="font-body-md text-body-md theme-text-body mt-2 mb-8">
+                Our PEC-registered solar engineer will visit your location to inspect roof azimuth, shading profile,
+                breaker distribution, and provide an accurate 3D CAD design.
+              </p>
+              <form class="flex flex-col gap-5" onsubmit="handleSurveySubmit(event)">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-md text-label-md font-semibold theme-text-heading">Full Name *</label>
+                    <input
+                      class="h-12 px-4 rounded-xl theme-bg-input border theme-border-subtle theme-text-heading placeholder-slate-400 text-body-sm focus:outline-none focus:border-brand-crimson focus:ring-1 focus:ring-brand-crimson shadow-inner"
+                      placeholder="e.g. Tariq Mehmood" required="" type="text" />
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-md text-label-md font-semibold theme-text-heading">WhatsApp Number
+                      *</label>
+                    <input
+                      class="h-12 px-4 rounded-xl theme-bg-input border theme-border-subtle theme-text-heading placeholder-slate-400 text-body-sm focus:outline-none focus:border-brand-crimson focus:ring-1 focus:ring-brand-crimson shadow-inner"
+                      placeholder="e.g. 0334-XXXXXXX" required="" type="tel" />
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-md text-label-md font-semibold theme-text-heading">City / Housing Society
+                      *</label>
+                    <select
+                      class="h-12 px-4 rounded-xl theme-bg-input border theme-border-subtle theme-text-heading text-body-sm focus:outline-none focus:border-brand-crimson focus:ring-1 focus:ring-brand-crimson shadow-inner"
+                      required="">
+                      <option class="theme-bg-card theme-text-muted" disabled="" selected="" value="">Select Society /
+                        Area</option>
+                      <option class="theme-bg-card theme-text-heading" value="Naval Anchorage">Naval Anchorage,
+                        Islamabad</option>
+                      <option class="theme-bg-card theme-text-heading" value="DHA Islamabad / Rawalpindi">DHA (Phases
+                        1-6)</option>
+                      <option class="theme-bg-card theme-text-heading" value="Bahria Town">Bahria Town
+                        (Islamabad/Rawalpindi)</option>
+                      <option class="theme-bg-card theme-text-heading" value="Gulberg Greens">Gulberg Greens /
+                        Residencia</option>
+                      <option class="theme-bg-card theme-text-heading" value="Sector F/G/E/H">CDA Sectors (F, G, E, H)
+                      </option>
+                      <option class="theme-bg-card theme-text-heading" value="Rawalpindi Cantt / Cantt">Rawalpindi Cantt
+                        / Chaklala</option>
+                      <option class="theme-bg-card theme-text-heading" value="Other Twin Cities">Other Twin Cities Area
+                      </option>
+                      <option class="theme-bg-card theme-text-heading" value="Peshawar / KPK">Peshawar / KPK Region
+                      </option>
+                    </select>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-md text-label-md font-semibold theme-text-heading">Average Monthly Bill
+                      *</label>
+                    <select
+                      class="h-12 px-4 rounded-xl theme-bg-input border theme-border-subtle theme-text-heading text-body-sm focus:outline-none focus:border-brand-crimson focus:ring-1 focus:ring-brand-crimson shadow-inner"
+                      required="">
+                      <option class="theme-bg-card theme-text-muted" disabled="" selected="" value="">Select Monthly
+                        Range</option>
+                      <option class="theme-bg-card theme-text-heading" value="Rs 20k - 40k">Rs 20,000 - Rs 40,000
+                      </option>
+                      <option class="theme-bg-card theme-text-heading" value="Rs 40k - 70k">Rs 40,000 - Rs 70,000
+                      </option>
+                      <option class="theme-bg-card theme-text-heading" value="Rs 70k - 120k">Rs 70,000 - Rs 120,000
+                      </option>
+                      <option class="theme-bg-card theme-text-heading" value="Rs 120k - 200k">Rs 120,000 - Rs 200,000
+                      </option>
+                      <option class="theme-bg-card theme-text-heading" value="Above Rs 200k">Commercial / Above Rs 200k
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label class="font-label-md text-label-md font-semibold theme-text-heading">Preferred Solution</label>
+                  <div class="grid grid-cols-3 gap-3">
+                    <label
+                      class="flex items-center gap-2 p-3 rounded-xl theme-bg-input border theme-border-subtle cursor-pointer hover:border-brand-crimson/50 transition-colors">
+                      <input checked="" class="accent-brand-crimson" name="system_type" type="radio" value="ongrid" />
+                      <span class="font-label-md text-label-md theme-text-heading">On-Grid</span>
+                    </label>
+                    <label
+                      class="flex items-center gap-2 p-3 rounded-xl theme-bg-input border theme-border-subtle cursor-pointer hover:border-brand-crimson/50 transition-colors">
+                      <input class="accent-brand-crimson" name="system_type" type="radio" value="hybrid" />
+                      <span class="font-label-md text-label-md theme-text-heading">Hybrid ESS</span>
+                    </label>
+                    <label
+                      class="flex items-center gap-2 p-3 rounded-xl theme-bg-input border theme-border-subtle cursor-pointer hover:border-brand-crimson/50 transition-colors">
+                      <input class="accent-brand-crimson" name="system_type" type="radio" value="captive" />
+                      <span class="font-label-md text-label-md theme-text-heading">Captive</span>
+                    </label>
+                  </div>
+                </div>
+                <button
+                  class="w-full h-14 mt-2 inline-flex items-center justify-center gap-2 bg-brand-crimson hover:bg-brand-crimson-hover text-white font-headline-sm text-headline-sm rounded-xl shadow-[0_0_24px_rgba(239,68,68,0.4)] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                  type="submit">
+                  <span class="material-symbols-outlined text-[24px]">calendar_month</span>
+                  <span class="">Book Free Engineer Survey</span>
+                </button>
+                <div
+                  class="hidden p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-bright font-label-md text-label-md flex items-center gap-2"
+                  id="surveySuccessMessage">
+                  <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                  <span class="">Thank you! Our lead solar engineer will call you within 2 business hours.</span>
+                </div>
+              </form>
+            </div>
+            <!-- Right Side: Official Head Office & Direct Phone Card -->
+            <div class="lg:col-span-5 flex flex-col gap-6 justify-between">
+              <div
+                class="theme-bg-card border theme-border-subtle rounded-3xl p-8 theme-text-heading shadow-2xl flex flex-col gap-6">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-brand-crimson flex items-center justify-center shadow-[0_0_12px_rgba(239,68,68,0.4)]">
+                    <span class="material-symbols-outlined text-white text-[22px]">apartment</span>
+                  </div>
+                  <div>
+                    <span
+                      class="font-label-badge text-label-badge text-emerald-bright uppercase tracking-wider font-bold">Islamabad
+                      Head Office</span>
+                    <h3 class="font-headline-md text-headline-md font-bold theme-text-heading">Ace Solar Energy (Pvt)
+                      Ltd</h3>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-4 font-body-sm text-body-sm theme-text-body">
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="material-symbols-outlined text-brand-crimson text-[20px] shrink-0 mt-1">location_on</span>
+                    <span class="">5th Floor, Anchor Arcade Plaza, Commercial Center, Naval Anchorage, Islamabad,
+                      Pakistan</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-emerald-bright text-[20px] shrink-0">call</span>
+                    <div class="flex items-center gap-3">
+                      <a class="hover:text-emerald-bright font-semibold text-emerald-bright transition-colors"
+                        href="tel:03340555295">0334-0555295</a>
+                      <span class="opacity-40">/</span>
+                      <a class="hover:text-emerald-bright font-semibold text-emerald-bright transition-colors"
+                        href="tel:03345555690">0334-5555690</a>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined theme-text-muted text-[20px] shrink-0">mail</span>
+                    <a class="hover:text-emerald-bright theme-text-body transition-colors"
+                      href="mailto:info@acesolarenergypk.com">info@acesolarenergypk.com</a>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-cyan-500 text-[20px] shrink-0">schedule</span>
+                    <span class="">Monday - Saturday: 9:00 AM - 6:00 PM</span>
+                  </div>
+                </div>
+                <!-- Static Map Pipeline Viewport -->
+                <div
+                  class="w-full h-44 rounded-2xl overflow-hidden bg-cover bg-center relative shadow-inner border theme-border-subtle"
+                  data-location="Anchor Arcade Plaza, Naval Anchorage, Islamabad"
+                  style="background: radial-gradient(circle at center, #1e293b 0%, #0b1325 100%);">
+                  <div class="absolute inset-0 bg-[#070d18]/40"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="flex flex-col items-center gap-1.5 text-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-brand-crimson/20 border border-brand-crimson/40 flex items-center justify-center animate-bounce">
+                        <span class="material-symbols-outlined text-brand-crimson text-[22px]">pin_drop</span>
+                      </div>
+                      <span class="font-headline-sm text-body-sm font-bold text-white">Anchor Arcade Plaza</span>
+                      <span class="font-label-badge text-label-badge text-slate-300">Commercial Center, Naval
+                        Anchorage</span>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-3 left-3 bg-[#070d18]/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-700/60 text-label-badge text-white flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-brand-crimson text-[16px]">verified</span>
+                    <span class="">Ace HQ Islamabad</span>
+                  </div>
+                </div>
+                <!-- Direct Contact WhatsApp / Call Bar -->
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                  <a class="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-label-md text-label-md font-bold transition-colors shadow-lg"
+                    href="https://wa.me/923340555295" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">chat</span>
+                    <span class="">WhatsApp Now</span>
+                  </a>
+                  <a class="flex items-center justify-center gap-2 py-3 rounded-xl theme-btn-alt border theme-border-subtle theme-text-heading font-label-md text-label-md transition-colors"
+                    href="tel:03340555295">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-bright">call</span>
+                    <span class="">Call Engineer</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- STICKY CONVERSION BAR (Desktop-Optimized Floating Dock) -->
+      <div
+        class="fixed bottom-6 right-6 z-40 flex items-center gap-3 theme-bg-card border theme-border-subtle backdrop-blur-md p-2.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+        <div class="hidden xl:flex items-center gap-3 px-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-bright animate-pulse"></span>
+          <span class="font-label-badge text-label-badge theme-text-heading font-semibold">Zero Bill Consultation
+            Open</span>
+        </div>
+        <a class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-label-md text-label-md font-bold px-4 py-2.5 rounded-xl shadow-md transition-all"
+          href="https://wa.me/923340555295" rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[18px]">chat</span>
+          <span class="">Instant WhatsApp</span>
+        </a>
+        <a class="inline-flex items-center gap-2 bg-brand-crimson hover:bg-brand-crimson-hover text-white font-label-md text-label-md px-4 py-2.5 rounded-xl shadow-md transition-all"
+          href="#survey-booking">
+          <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+          <span class="">Book Survey</span>
+        </a>
+      </div>
+    </div>
+    <!-- Inline Logic for ROI Calculator, Interactive Leads, and Theme Toggle -->
+    <script>
+      // Theme Switching Implementation
+      let currentTheme = localStorage.getItem('ace_theme') || 'dark';
+
+      function applyTheme(theme) {
+        const html = document.documentElement;
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+
+        if (theme === 'light') {
+          html.classList.remove('dark');
+          html.classList.add('light');
+          if (themeIcon) {
+            themeIcon.textContent = 'dark_mode';
+            themeIcon.className = 'material-symbols-outlined text-[19px] text-slate-700 select-none';
+          }
+          if (themeText) themeText.textContent = 'Dark Mode';
+        } else {
+          html.classList.remove('light');
+          html.classList.add('dark');
+          if (themeIcon) {
+            themeIcon.textContent = 'light_mode';
+            themeIcon.className = 'material-symbols-outlined text-[19px] text-amber-400 select-none';
+          }
+          if (themeText) themeText.textContent = 'Light Mode';
+        }
+        localStorage.setItem('ace_theme', theme);
+        currentTheme = theme;
+      }
+
+      function toggleTheme() {
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+      }
+
+      // Initialize theme on load
+      document.addEventListener('DOMContentLoaded', function () {
+        applyTheme(currentTheme);
+      });
+
+      function formatPKR(val) {
+        return 'PKR ' + Number(val).toLocaleString('en-US');
+      }
+
+      function updateSolarCalculations(bill) {
+        const billNum = parseInt(bill, 10);
+        document.getElementById('billValueDisplay').textContent = formatPKR(billNum);
+
+        // Engineering approximations based on IESCO/NEPRA 2025 residential tier
+        let kw = (billNum / 6000).toFixed(1);
+        if (kw < 3.5) kw = 3.5;
+        if (kw > 50) kw = 50;
+
+        const annualSavings = Math.round(billNum * 12 * 0.96);
+
+        // Payback calculation based on standard turnkey pricing PKR ~140,000/kW installed
+        const estimatedCost = kw * 145000;
+        const payback = (estimatedCost / annualSavings).toFixed(1);
+
+        const carbonTons = (kw * 1.1).toFixed(1);
+
+        document.getElementById('systemSizeDisplay').textContent = kw + ' kW';
+        document.getElementById('annualSavingsDisplay').textContent = formatPKR(annualSavings);
+        document.getElementById('paybackDisplay').textContent = (payback < 1.9 ? '1.9' : payback) + ' Years';
+        document.getElementById('carbonOffsetDisplay').textContent = carbonTons + ' Tons/Yr';
+      }
+
+      const slider = document.getElementById('billSlider');
+      if (slider) {
+        slider.addEventListener('input', function (e) {
+          updateSolarCalculations(e.target.value);
+        });
+      }
+
+      function setBill(amount) {
+        if (slider) {
+          slider.value = amount;
+          updateSolarCalculations(amount);
+        }
+      }
+
+      function handleSurveySubmit(e) {
+        e.preventDefault();
+        const msg = document.getElementById('surveySuccessMessage');
+        if (msg) {
+          msg.classList.remove('hidden');
+          e.target.reset();
+          setTimeout(function () {
+            msg.classList.add('hidden');
+          }, 7000);
+        }
+      }
+    </script>
+  </main>
+  <footer class="w-full theme-bg-footer text-text-secondary border-t theme-border-subtle pb-28">
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-28 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div class="lg:col-span-2 flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="bg-white/95 p-1 rounded-md flex items-center justify-center"><img
+                alt="Ace Solar Energy Pakistan" class="h-9 w-auto object-contain"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1VOO7F9wOryx0_KRTxDnFYQuQ5SxPfVstKf_kgSa40z9PdFhtkNg8auZZUDSLlFkQoZ7msPV5TjGsydIG6CywF976wNk7xeGOXBM3872nLi3UNnfu6HBXflJLEAzZf7pj0TJ9eJ8UrbrbWdfp0fDaYQYdEuYLzieVR-J_W9TULMZUhCP8zxBHeMIQeV5zyvuXyzs86GjGuerZLIgD58wDqrlBf0zcDpeFPgjbD9HsFxyRTtdXr88C-vo6U" />
+            </div><span class="font-headline-sm text-headline-sm font-bold text-white">Ace Solar Energy</span>
+          </div>
+          <p class="font-body-md text-body-md text-slate-300 leading-relaxed max-w-md">Ace Solar Energy Pakistan is a
+            premier EPC engineering firm delivering tier-1 solar photovoltaic, hybrid grid-tied, and captive power
+            solutions across Islamabad, Punjab, and KPK. Accredited by AEDB and PEC for maximum commercial yield and
+            rapid net metering approval.</p>
+          <div class="flex flex-wrap gap-2 pt-2"><span
+              class="px-3 py-1 bg-slate-800/80 rounded-md text-label-badge font-label-badge text-emerald-bright border border-emerald-500/30">AEDB
+              V1 Certified</span><span
+              class="px-3 py-1 bg-slate-800/80 rounded-md text-label-badge font-label-badge text-white border border-slate-700">PEC
+              Licensed</span><span
+              class="px-3 py-1 bg-slate-800/80 rounded-md text-label-badge font-label-badge text-cyan-300 border border-cyan-500/30">REAP
+              Corporate</span></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-headline-sm text-headline-sm text-white font-semibold">Solar Solutions</h4>
+          <ul class="flex flex-col gap-2.5 text-body-sm text-slate-300">
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="on-grid-solar"
+                href="#">Residential On-Grid Solar</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="commercial-solar"
+                href="#">Commercial Net Metering</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="industrial-solar"
+                href="#">Industrial Captive Plants</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="hybrid-solar" href="#">Hybrid
+                ESS Lithium Storage</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="agricultural-tubewell"
+                href="#">Solar Tube Well Pumping</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-headline-sm text-headline-sm text-white font-semibold">Company &amp; Links</h4>
+          <ul class="flex flex-col gap-2.5 text-body-sm text-slate-300">
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="about-us" href="#">About Ace
+                Solar</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="solar-packages"
+                href="#">Turnkey 5kW - 50kW Packages</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="projects" href="#">Project
+                Portfolio</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="roi-calculator"
+                href="#">Solar ROI &amp; Units Calculator</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="net-billing" href="#">Net
+                Metering Guidelines</a></li>
+            <li class=""><a class="hover:text-emerald-bright transition-colors" data-path="contact"
+                href="#survey-booking">Contact &amp; Site Surveys</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-headline-sm text-headline-sm text-white font-semibold">Head Office</h4>
+          <div class="flex flex-col gap-3 text-body-sm text-slate-300">
+            <div class="flex items-start gap-2.5"><span
+                class="material-symbols-outlined text-[20px] text-brand-crimson shrink-0 mt-0.5">location_on</span><span
+                class="">5th Floor, Anchor Arcade Plaza, Commercial Center, Naval Anchorage, Islamabad, Pakistan</span>
+            </div>
+            <div class="flex items-center gap-2.5"><span
+                class="material-symbols-outlined text-[18px] text-emerald-bright shrink-0">call</span><a
+                class="hover:text-emerald-bright transition-colors" href="tel:03340555295">0334-0555295</a></div>
+            <div class="flex items-center gap-2.5"><span
+                class="material-symbols-outlined text-[18px] text-slate-400 shrink-0">mail</span><a
+                class="hover:text-white transition-colors"
+                href="mailto:info@acesolarenergypk.com">info@acesolarenergypk.com</a></div>
+            <div class="flex items-center gap-2.5"><span
+                class="material-symbols-outlined text-[18px] text-cyan-400 shrink-0">schedule</span><span class="">Mon -
+                Sat: 9:00 AM - 6:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-12 pt-6 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-body-sm text-slate-400">
+        <p class="">© 2025 Ace Solar Energy Pakistan. All Rights Reserved. Engineered with Pride in Pakistan.</p>
+        <div class="flex items-center gap-6"><a class="hover:text-white transition-colors" data-path="privacy-policy"
+            href="#">Privacy Policy</a><a class="hover:text-white transition-colors" data-path="terms-conditions"
+            href="#">Terms of Service</a><a class="hover:text-white transition-colors" data-path="sitemap"
+            href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

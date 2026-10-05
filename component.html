@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ace Solar - Utility Topbar Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 17px;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-6 md:p-12 flex flex-col justify-center items-center">
+
+  <div class="w-full max-w-6xl space-y-10">
+    <!-- Header title -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Standalone Component
+        </div>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-white">Ace Solar — Utility Topbar Component</h1>
+        <p class="text-slate-400 text-sm mt-1">Extracted standalone top-bar component showcasing both Dark Mode and Light Mode variants with interactive contact triggers and compliance badges.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-slate-500 font-mono">Selector: div.max-w-7xl.mx-auto.px-6</span>
+      </div>
+    </div>
+
+    <!-- Variant 1: Dark Mode Variant (As shown in Active Desktop App) -->
+    <div class="space-y-3">
+      <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-red-500"></span>
+          Variant 1: Dark Obsidian (Active Live Theme)
+        </span>
+        <span class="text-slate-500">Desktop 1280px standard</span>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-[#051424]">
+        <!-- EXACT EXTRACTED COMPONENT: DARK THEME -->
+        <div class="w-full bg-[#051424] text-slate-300 border-b border-slate-800/80 text-xs py-2.5 transition-colors">
+          <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4">
+            
+            <!-- Left Info (HQ Location, Direct Line, Support Email) -->
+            <div class="flex flex-wrap items-center gap-6">
+              <a href="https://maps.google.com/?q=Naval+Anchorage+Islamabad" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-white transition-colors group">
+                <span class="material-symbols-outlined text-red-500 group-hover:scale-110 transition-transform">location_on</span>
+                <span class="font-medium text-slate-300 group-hover:text-white">Naval Anchorage, Islamabad</span>
+              </a>
+
+              <a href="tel:0334-0555295" class="flex items-center gap-1.5 hover:text-emerald-400 transition-colors group">
+                <span class="material-symbols-outlined text-emerald-400 group-hover:scale-110 transition-transform">call</span>
+                <span class="font-medium text-slate-300 group-hover:text-white tracking-wide">0334-0555295</span>
+              </a>
+
+              <a href="mailto:info@acesolarenergypk.com" class="flex items-center gap-1.5 hover:text-white transition-colors group">
+                <span class="material-symbols-outlined text-slate-400 group-hover:text-slate-200 transition-colors">mail</span>
+                <span class="font-medium text-slate-300 group-hover:text-white">info@acesolarenergypk.com</span>
+              </a>
+            </div>
+
+            <!-- Right Credentials & Licensing Badges -->
+            <div class="flex items-center">
+              <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#0d1c2d] border border-emerald-500/30 text-emerald-300 text-[11px] font-medium shadow-sm">
+                <span class="material-symbols-outlined fill text-emerald-400 text-[15px]">verified</span>
+                <span class="font-semibold text-emerald-200">AEDB Certified V1</span>
+                <span class="text-slate-600 font-bold">•</span>
+                <span class="text-slate-300">PEC Registered</span>
+                <span class="text-slate-600 font-bold">•</span>
+                <span class="text-slate-300">REAP Member</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /EXACT EXTRACTED COMPONENT -->
+      </div>
+    </div>
+
+    <!-- Variant 2: Light Mode Variant -->
+    <div class="space-y-3">
+      <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Variant 2: Crisp Clean Light Theme
+        </span>
+        <span class="text-slate-500">CleanTech Light Palette</span>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/60 bg-white">
+        <!-- EXTRACTED COMPONENT: LIGHT THEME -->
+        <div class="w-full bg-[#f8fafc] text-slate-700 border-b border-slate-200 text-xs py-2.5 transition-colors">
+          <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4">
+            
+            <!-- Left Info -->
+            <div class="flex flex-wrap items-center gap-6">
+              <a href="https://maps.google.com/?q=Naval+Anchorage+Islamabad" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-slate-900 transition-colors group">
+                <span class="material-symbols-outlined text-red-600 group-hover:scale-110 transition-transform">location_on</span>
+                <span class="font-medium text-slate-700 group-hover:text-slate-900">Naval Anchorage, Islamabad</span>
+              </a>
+
+              <a href="tel:0334-0555295" class="flex items-center gap-1.5 hover:text-emerald-700 transition-colors group">
+                <span class="material-symbols-outlined text-emerald-600 group-hover:scale-110 transition-transform">call</span>
+                <span class="font-semibold text-slate-800 group-hover:text-emerald-700 tracking-wide">0334-0555295</span>
+              </a>
+
+              <a href="mailto:info@acesolarenergypk.com" class="flex items-center gap-1.5 hover:text-slate-900 transition-colors group">
+                <span class="material-symbols-outlined text-slate-500 group-hover:text-slate-800 transition-colors">mail</span>
+                <span class="font-medium text-slate-700 group-hover:text-slate-900">info@acesolarenergypk.com</span>
+              </a>
+            </div>
+
+            <!-- Right Credentials Badge -->
+            <div class="flex items-center">
+              <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-900 text-[11px] font-medium shadow-sm">
+                <span class="material-symbols-outlined fill text-emerald-600 text-[15px]">verified</span>
+                <span class="font-bold text-emerald-800">AEDB Certified V1</span>
+                <span class="text-slate-400 font-bold">•</span>
+                <span class="text-slate-700 font-medium">PEC Registered</span>
+                <span class="text-slate-400 font-bold">•</span>
+                <span class="text-slate-700 font-medium">REAP Member</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /EXTRACTED COMPONENT -->
+      </div>
+    </div>
+
+    <!-- Component Architecture & Anatomy Specs -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+      <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700/60">
+        <div class="flex items-center gap-2 text-red-400 font-semibold text-sm mb-2">
+          <span class="material-symbols-outlined">tune</span>
+          Typography & Metrics
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Base type scale: <code class="text-amber-300 bg-slate-900/80 px-1 py-0.5 rounded">text-xs (12px)</code>. Badge font size: <code class="text-amber-300 bg-slate-900/80 px-1 py-0.5 rounded">11px</code>. Uses <code class="text-amber-300 bg-slate-900/80 px-1 py-0.5 rounded">Plus Jakarta Sans</code> with medium (500) and semibold (600) weights.
+        </p>
+      </div>
+
+      <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700/60">
+        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm mb-2">
+          <span class="material-symbols-outlined">verified</span>
+          Verified Accreditations
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Contains Pakistan Alternative Energy Development Board (<strong class="text-white">AEDB V1</strong>), Pakistan Engineering Council (<strong class="text-white">PEC</strong>), and Renewable Energy Association of Pakistan (<strong class="text-white">REAP</strong>).
+        </p>
+      </div>
+
+      <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700/60">
+        <div class="flex items-center gap-2 text-blue-400 font-semibold text-sm mb-2">
+          <span class="material-symbols-outlined">code</span>
+          HTML Embed Spec
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Self-contained container with flex wrap, fully responsive across desktop and tablet with responsive margins and interactive hover states.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
